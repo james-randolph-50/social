@@ -55,13 +55,33 @@ if(isset($_POST['register_button'])) {
                 echo "Email already in use.";
             }
 
-
         } else {
             echo "Invalid format";
         }
 
     } else {
         echo "Emails don't match";
+    }
+
+    if(strlen($fname) > 25 || strlen($fname) < 2) {
+        echo "Your first name must be between 2 and 25 chaqracters";
+    }
+
+    if(strlen($lname) > 25 || strlen($lname) < 2) {
+        echo "Your last name must be between 2 and 25 chaqracters";
+    }
+
+    if($password != $password2) {
+        echo "Your password sdon't match";
+    }
+    else {
+        if(preg_match('/[^A-Za-z0-9]/', $password)) {
+            echo "Your password can only contain english alphanumeric numbers";
+        }
+    }
+
+    if(strlen($password > 30 || strlen($password) < 5)) {
+        echo "Your password must be between 5 and 30 characters";
     }
 }
 ?>
