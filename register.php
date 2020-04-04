@@ -43,6 +43,8 @@ if(isset($_POST['register_button'])) {
 
         if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
             $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+
+            
         } else {
             echo "Invalid format";
         }
