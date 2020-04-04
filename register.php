@@ -34,8 +34,22 @@ if(isset($_POST['register_button'])) {
     $em2 = ucfirst(strtolower($em2)); // Uppercase first letter
    
     $password = strip_tags($_POST['reg_password']); // Remove html tags
-    $password = str_replace(' ', '', $password); // Remove spaces
-    $password = ucfirst(strtolower($password)); // Uppercase first letter
+    $password2 = strip_tags($_POST['reg_password2']); // Remove html tags
+
+    $date = date("Y-m-d"); // Current Date
+
+    if($em == $em2) {
+        // Check for valid email
+
+        if(filter_var($em, FILTER_VALIDATE_EMAIL)) {
+            $em = filter_var($em, FILTER_VALIDATE_EMAIL);
+        } else {
+            echo "Invalid format";
+        }
+
+    } else {
+        echo "Emails don't match";
+    }
 }
 ?>
 
