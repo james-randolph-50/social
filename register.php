@@ -1,4 +1,5 @@
 <?php
+session_start();
 $con = mysqli_connect("localhost", "root", "", "social");
 if(mysqli_connect_errno()) {
     echo "Failed to connect: " . mysqli_connect_errno();
@@ -20,18 +21,25 @@ if(isset($_POST['register_button'])) {
     $fname = strip_tags($_POST['reg_fname']); // Remove html tags
     $fname = str_replace(' ', '', $fname); // Remove spaces
     $fname = ucfirst(strtolower($fname)); // Uppercase first letter
+    $_SESSION['reg_fname'] = $fname; // Stores first name into session var
 
     $lname = strip_tags($_POST['reg_lname']); // Remove html tags
     $lname = str_replace(' ', '', $lname); // Remove spaces
     $lname = ucfirst(strtolower($lname)); // Uppercase first letter
+    $_SESSION['reg_lname'] = $lname; // Stores last name into session var
+
    
     $em = strip_tags($_POST['reg_email']); // Remove html tags
     $em = str_replace(' ', '', $em); // Remove spaces
     $em = ucfirst(strtolower($em)); // Uppercase first letter
+    $_SESSION['reg_email'] = $em; // Stores email into session var
+
   
     $em2 = strip_tags($_POST['reg_email2']); // Remove html tags
     $em2 = str_replace(' ', '', $em2); // Remove spaces
     $em2 = ucfirst(strtolower($em2)); // Uppercase first letter
+    $_SESSION['reg_email2'] = $em2; // Stores email2 into session var
+
    
     $password = strip_tags($_POST['reg_password']); // Remove html tags
     $password2 = strip_tags($_POST['reg_password2']); // Remove html tags
@@ -93,7 +101,11 @@ if(isset($_POST['register_button'])) {
 <body>
 <h1>Register</h1>
 <form action="register.php" method="POST">
-    <input type="text" name="reg_fname" placeholder="First Name" required>
+    <input type="text" name="reg_fname" placeholder="First Name"value="<?php 
+        if(isset($_SESSION['reg_fname'])) {
+            echo $_SESSION['reg_fname'];
+        }
+    ?>" required>
     <br>
     <input type="text" name="reg_lname" placeholder="Last Name" required>
     <br>
