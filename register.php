@@ -13,6 +13,30 @@ $password = "";
 $password2 = "";
 $date = "";
 $error_array = "";
+
+if(isset($_POST['register_button'])) {
+
+    // Registration for values
+    $fname = strip_tags($_POST['reg_fname']); // Remove html tags
+    $fname = str_replace(' ', '', $fname); // Remove spaces
+    $fname = ucfirst(strtolower($fname)); // Uppercase first letter
+
+    $lname = strip_tags($_POST['reg_lname']); // Remove html tags
+    $lname = str_replace(' ', '', $lname); // Remove spaces
+    $lname = ucfirst(strtolower($lname)); // Uppercase first letter
+   
+    $em = strip_tags($_POST['reg_email']); // Remove html tags
+    $em = str_replace(' ', '', $em); // Remove spaces
+    $em = ucfirst(strtolower($em)); // Uppercase first letter
+  
+    $em2 = strip_tags($_POST['reg_email2']); // Remove html tags
+    $em2 = str_replace(' ', '', $em2); // Remove spaces
+    $em2 = ucfirst(strtolower($em2)); // Uppercase first letter
+   
+    $password = strip_tags($_POST['reg_password']); // Remove html tags
+    $password = str_replace(' ', '', $password); // Remove spaces
+    $password = ucfirst(strtolower($password)); // Uppercase first letter
+}
 ?>
 
 <html>
