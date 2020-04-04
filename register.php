@@ -46,7 +46,7 @@ if(isset($_POST['register_button'])) {
             $em = filter_var($em, FILTER_VALIDATE_EMAIL);
 
             // Check if email already exists
-            $e_check = myslqi_query($con, "SELECT email FROM users WHERE email='$em'");
+            $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$em'");
 
             // Count the number of rows returned
             $num_rows = mysqli_num_rows($e_check);
