@@ -8,6 +8,18 @@ require 'includes/form_handlers/register_handler.php';
 <title>Register</title>
 </head>
 <body>
+
+<form action="register.php" method="POST">
+    <input type="email" name="log_email" placeholder="Email Address">
+    <br>
+    <input type="password" name="log_password" placeholder="Password">
+    <bR>
+    <input type="submit" name="login_button" value="Login">
+
+
+</form>
+
+
 <h1>Register</h1>
 <form action="register.php" method="POST">
     <input type="text" name="reg_fname" placeholder="First Name" value="<?php 
