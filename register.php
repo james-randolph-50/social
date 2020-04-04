@@ -121,6 +121,12 @@ if(isset($_POST['register_button'])) {
 
         array_push($error_array, "<span style='color:#14C800;'>You're all set! Go ahead and login.</span><br>");
 
+        // Clear session variables
+        $_SESSION['reg_fname'] = "";
+        $_SESSION['reg_lname'] = "";
+        $_SESSION['reg_email'] = "";
+        $_SESSION['reg_email2'] = "";
+
     }
 }
 ?>
