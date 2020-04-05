@@ -12,6 +12,11 @@ require 'includes/form_handlers/login_handler.php';
 <body>
 
 <div class="wrapper">
+    <div class="login_box">
+        <div class="login_header">
+            <h1>Social media app</h1>
+            <p>Login or sign up below</p>
+        </div>
     <form action="register.php" method="POST">
         <input type="email" name="log_email" placeholder="Email Address" value="<?php 
             if(isset($_SESSION['log_email'])) {
@@ -28,8 +33,6 @@ require 'includes/form_handlers/login_handler.php';
 
     </form>
 
-
-    <h1>Register</h1>
     <form action="register.php" method="POST">
         <input type="text" name="reg_fname" placeholder="First Name" value="<?php 
             if(isset($_SESSION['reg_fname'])) {
@@ -80,6 +83,7 @@ require 'includes/form_handlers/login_handler.php';
 
 
     </form>
+    </div>
 
 </div>
 </body>
