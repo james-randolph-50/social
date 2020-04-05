@@ -6,6 +6,12 @@
     font-family: 'Bellota-BoldItalic';
     src: url('../fonts/Bellota-BoldItalic.otf');
 }
+
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -50,4 +56,27 @@ form {
     font-family: 'Bellota-BoldItalic', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+input[type="submit"] {
+    background-color: #3498db;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    margin-top:10px;
+    color: #fff;
+    font-family: 'Bellota-BoldItalic', sans-serif;
+    font-size:1rem;
+}
+
+input[type="text"],input[type="email"],input[type="password"] {
+    border: 1px solid #e5e5e5;
+    width: 70%;
+    margin-bottom:10px;
+    padding-left:5px;
+    transition: all .2s;
+}
+
+input[type="text"]:hover,input[type="email"]:hover,input[type="password"]:hover {
+    border-color: #3498db;
 }
