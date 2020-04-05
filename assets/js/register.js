@@ -8,7 +8,7 @@ $(document).ready(function(){
     });
 
         // on  click, hide  reg and show login form
-        $("#signup").click(function() {
+        $("#signin").click(function() {
             $("#second").slideUp("slow", function(){
                 $("#first").slideDown("slow");
             });
