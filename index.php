@@ -1,17 +1,8 @@
 <?php
-require 'config/config.php';
-
+include("includes/header.php");
+// session_destroy();
 ?>
-
-
-<html>
-<head>
-<title>Social network</title>
-</head>
-<body>
 yo gotti
-
-</html>
 </body>
 
 </html>

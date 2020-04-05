@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Bellota-LightItalic';
+    src: url('../fonts/Bellota-LightItalic.otf');
+}
+@font-face {
+    font-family: 'Bellota-BoldItalic';
+    src: url('../fonts/Bellota-BoldItalic.otf');
+}
+
+.top_bar {
+    width: 100%;
+    height: 40px;
+    background-color: #3948db;
+    border-bottom: 5px solid greenyellow;
+    margin-bottom: 1rem;
+    display:inline-flex;
+}
+
+.logo a {
+    font-family: 'Bellota-BoldItalic', sans-serif;
+    margin-left: 1rem;
+    position: relative;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+nav {
+    float: right;
+    right: 1px;
+    position: absolute;
+    margin: 5px;
+}
+
+nav a {
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    border-bottom: 3px solid #fff;
+    color: #fff;
+}
