@@ -6,6 +6,7 @@ include("includes/classes/Post.php");
 if(isset($_POST['post'])){
     $post = new Post($con, $userLoggedIn);
     $post->submitPost($_POST['post_text'],$_POST['post_number'], NULL);
+    header("Location: index.php");
 }
 ?>
 
