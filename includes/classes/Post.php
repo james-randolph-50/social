@@ -75,6 +75,11 @@ class Post {
              $user_details_query = mysqli_query($this->con, "SELECT firstname, last_name,  profile_pic FROM users WHERE username='$added_by'");
              $user_row = mysqli_fetch_array($user_details_query);
 
+             //Timeframe
+             $date_time_now = date("Y-m-d H:i:s");
+             $start_date = new DateTime($date_time);
+             $end_date = new DateTime($date_time_now);
+
         }
     }
 
