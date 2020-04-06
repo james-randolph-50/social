@@ -24,7 +24,7 @@ if(isset($_POST['post'])){
 
 <div class="main_column column">
     <form class="post_form" action="index.php" method="POST">
-        <input type="number" name="post_number" id="post_number" min="0" max="200"><br>
+        <input type="number" name="post_number" id="post_number" min="0" max="200" required><br>
         <textarea name="post_text" id="post_text" placeholder="Describe it to us..."></textarea>
         <input type="submit" name="post" id="post_button" value="Post">
         <hr>

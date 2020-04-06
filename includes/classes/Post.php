@@ -13,6 +13,9 @@ class Post {
         // $number = string_tags($number);
         $body = mysqli_real_escape_string($this->con, $body);
 
+        $body = str_replace('\r\n', '\n', $body);
+        $body = nl2br($body);
+
         $check_empty = preg_replace('/\s+/', '', $body); // deletes all spaces
 
         if($check_empty != "") {
