@@ -66,6 +66,14 @@ class Post {
                 $user_to = "<a href='" . $row['user_to'] . "'>" . $user_to_name . "</a>"
             }
 
+            // Check if poster has their account closed
+             $added_to_obj = new  User($con, $added_by);
+             if($added_by_obj->isClosed()){
+                 continue;
+             }
+
+             $user_details_query = mysqli_query($this->con, "SELECT firstname, last_name,  profile_pic FROM users WHERE username='$added_by'");
+             $user_row = mysqli_fetch_array($user_details_query);
 
         }
     }
