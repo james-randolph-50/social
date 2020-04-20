@@ -30,7 +30,7 @@ class Post {
             }
 
             // Insert post into database
-            $query = mysqli_query($this->con, "INSERT INTO posts VALUES(NULL, '$body',  '$number', '$added_by', '$user_to', '$date_added', 'no', 'no', '0')");
+            $query = mysqli_query($this->con, "INSERT INTO posts VALUES(NULL, '$body',  '$number', '$added_by', 'none', '$date_added', 'no', 'no', '0')");
             $returned_id = mysqli_insert_id($this->con);
 
             // insert notification
@@ -58,8 +58,6 @@ class Post {
                 $user_to = "none";
             }
             else {
-                if($row['user_to'] == null) exit("user_to value is " . $row['user_to']);
-
                 $user_to_obj = new User($this->con, $row['user_to']);
                 $user_to_name = $user_to_obj->getFirstAndLastName();
                 $user_to = "to <a href='" . $row['user_to'] . "'>" . $user_to_name . "</a>";
@@ -150,7 +148,8 @@ class Post {
                             $number<br>
                             $body<br>
                         </div>
-                    </div>";
+                    </div>
+                    <hr>";
         }
 
         echo $str;
