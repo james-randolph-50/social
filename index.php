@@ -36,7 +36,34 @@ if(isset($_POST['post'])){
     $post->loadPostsFriends();
 ?>
 
+<img id="#loading" src="assets/images/icons/ylb.png">
+
 </div>
+
+<script>
+var userLoggedIn = '?php echo $userLoggedIn; ?>';
+
+$(document).ready(function() {
+    $('#loading').show();
+
+    // Original ajax request for loading first posts
+    $.ajax({
+        url: "includes/handlers/ajax_load_posts.php",
+        type: "POST",
+        data: "page=1&userLoggedIn=" + userLoggedIn,
+        cache: false,
+
+        success: function(data) {
+            $('#loading'.hide();
+            $('.posts_area').html(data);
+        }
+    });
+
+
+});
+
+
+</script>
 
 
 </div> <!-- closes wrapper from header.php -->
